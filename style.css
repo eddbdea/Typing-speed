@@ -1,0 +1,36 @@
+.container-fluid {
+    margin-top: 25rem;
+    height: 50rem;
+    background-image: url("images/backround.svg");
+}
+
+.container {
+    margin-top: 10rem;
+    border-radius: 30px;
+    height: 10rem;
+    width: 50rem;
+    text-align: start;
+    align-content: center;
+    padding-left: 5rem;
+    background-color: white;
+}
+
+.title {
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.display-type {
+    display: inline;
+    opacity: 0.5;
+    font-size: 40px;
+    margin-right: 5px;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
