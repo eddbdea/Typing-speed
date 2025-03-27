@@ -11,12 +11,26 @@
   <body>
     <div class="container-fluid">
       <h1 class ="title">Typing speed test</h1>
-      <div class="container">
+      <div class="container game">
         <div class="display-type" id="primary-word"></div>
         <div class="display-type" id="secondary-word-1"></div>
         <div class="display-type" id="secondary-word-2"></div>
         <div class="display-type" id="secondary-word-3"></div>
       </div>  
+      <div class="timer-container" id="start-game">
+        <h1>Press <span>1</span> to start the challenge!</h1>
+      </div>
+      <div class="timer-container" id="words-counter">
+        <div id="timer">
+          <h1 id="seconds">60</h1><h4>seconds</h4>
+        </div>
+        <h2 class="inline-style">Words per minute (WPM): </h1>
+        <h2 class="inline-style" id="score">0</h2>
+      </div>
+      <div class="timer-container" id="results">
+        <h3 id="game-result" style="text-align: start;"></h3>
+        <button type="button" class="btn btn-success" onclick="playAgain()">Try again!</button>
+      </div>
     </div>
   </body>
   <script src="words.js"></script>

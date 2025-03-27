@@ -1,11 +1,11 @@
 .container-fluid {
-    margin-top: 25rem;
+    margin-top: 23rem;
     height: 50rem;
     background-image: url("images/backround.svg");
 }
 
-.container {
-    margin-top: 10rem;
+.container, game {
+    margin-top: 5rem;
     border-radius: 30px;
     height: 10rem;
     width: 50rem;
@@ -15,22 +15,71 @@
     background-color: white;
 }
 
+.timer-container {
+    margin: auto;
+    width: 50rem;
+    padding-top: 5rem;
+    padding-left: 10px;
+}
+
+#words-counter {
+    display: none;
+}
+
+#start-game {
+    text-align: center;
+    color: #5F8B4C;
+    display: block;
+}
+
+#timer {
+    text-align: center;
+    align-content: center;
+    height: 9rem;
+    width: 9rem;
+    border: 6px solid #5F8B4C;
+    border-radius: 50%;
+    padding: 5px;
+    display: inline-block;
+    margin-right: 2rem;
+    color: #5F8B4C;
+}
+
+#results {
+    display: none;
+    color: #5F8B4C;
+    text-align: center;
+}
+
+.inline-style {
+    display: inline-block;
+    color: #5F8B4C;
+}
+
 .title {
     padding-top: 5rem;
     text-align: center;
+    color: #5F8B4C;
 }
 
 .display-type {
     display: inline;
-    opacity: 0.5;
+    opacity: 0.3;
     font-size: 40px;
     margin-right: 5px;
+    color: #5F8B4C;
 }
 
-.green {
+.correct {
     color: green;
 }
 
-.red {
+.wrong {
     color: red;
+}
+
+button {
+    margin-top: 1rem;
+    height: 3rem;
+    width: 8rem;
 }
