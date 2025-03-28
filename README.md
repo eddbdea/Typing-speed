@@ -1,4 +1,5 @@
-Typing speed is an interactive game designed for testing your typing speed :)
+Typing speed is an interactive game designed to test your typing reaction!
+
 Game rules are very simple, try to write as many correct words as possible in one minute. When time ends, you will see your WP (words per minute) score.
 
 Game interactions:
