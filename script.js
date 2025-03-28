@@ -1,3 +1,15 @@
+const BACKSPACE = 'Backspace';
+const SPACE = 'Space';
+const A_KEY = 'KeyA';
+const Z_KEY = 'KeyZ';
+const ONE_DIGIT = 'Digit1';
+const ONE_SECOND_MS = 1000;
+const TEN_SECONDS = 10;
+const ONE_MINUTE_SEC = 60;
+const TURTLE_SPEED = 20;
+const OCTOPUS_SPEED = 40;
+const TWO_HUNDRED = 200;
+
 const wordArrayLength = words.length;
 const primaryWord = document.getElementById('primary-word');
 const secondWord = document.getElementById('secondary-word-1');
@@ -10,17 +22,6 @@ const startGame = document.getElementById('start-game');
 const resultsContainer = document.getElementById('results');
 const gameResults = document.getElementById('game-result');
 const previousWord = [];
-const BACKSPACE = 'Backspace';
-const SPACE = 'Space';
-const A_KEY = 'KeyA';
-const Z_KEY = 'KeyZ';
-const ONE_DIGIT = 'Digit1';
-const ONE_SECOND_MS = 1000;
-const TEN_SECONDS = 10;
-const ONE_MINUTE_SEC = 60;
-const TURTLE_SPEED = 20;
-const OCTOPUS_SPEED = 40;
-const TWO_HUNDRED = 200;
 let stopTimer = 0;
 let score = 0;
 let prwIndex = 0;
@@ -28,6 +29,10 @@ let charIndex = 0;
 let oneMinuteTimer = 60;
 let finalString = "";
 let validWord = true;
+let firstWordIndex = randomWord();
+let secondWordIndex = randomWord();
+let thirdWordIndex = randomWord();
+let fourthWordIndex = randomWord();
 
 window.addEventListener('keydown', (event) => {
     if (event.code === ONE_DIGIT) {
@@ -89,30 +94,28 @@ function randomWord() {
     return Math.floor(Math.random() * TWO_HUNDRED);
 }
 
-let FIRST_WORD_INDEX = randomWord();
-let SECOND_WORD_INDEX = randomWord();
-let THIRD_WORD_INDEX = randomWord();
-let FOURTH_WORD_INDEX = randomWord();
-
 function generateWords() {
-    primaryWord.innerText = `${words[FIRST_WORD_INDEX]}`;
-    secondWord.innerText = `${words[SECOND_WORD_INDEX]}`;
-    thirdWord.innerText = `${words[THIRD_WORD_INDEX]}`;
-    fourthWord.innerText = `${words[FOURTH_WORD_INDEX]}`;
+    primaryWord.innerText = `${words[firstWordIndex]}`;
+    secondWord.innerText = `${words[secondWordIndex]}`;
+    thirdWord.innerText = `${words[thirdWordIndex]}`;
+    fourthWord.innerText = `${words[fourthWordIndex]}`;
 }
 
 generateWords();
 
 function updateWords() {
-    FIRST_WORD_INDEX = SECOND_WORD_INDEX;
-    SECOND_WORD_INDEX = THIRD_WORD_INDEX;
-    THIRD_WORD_INDEX = FOURTH_WORD_INDEX;
-    FOURTH_WORD_INDEX = randomWord();
+    firstWordIndex = secondWordIndex;
+    secondWordIndex = thirdWordIndex;
+    thirdWordIndex = fourthWordIndex;
+    fourthWordIndex = randomWord();
+    if (fourthWordIndex === thirdWordIndex) {
+        fourthWordIndex = randomWord();
+    }
     generateWords();
 }
 
 function checkWord(event) {
-    const currentWord = words[FIRST_WORD_INDEX];
+    const currentWord = words[firstWordIndex];
     const wordLength = currentWord.length;
     if (event.code >= A_KEY && event.code <= Z_KEY) {
         changeLetters(event, currentWord, wordLength);
@@ -135,7 +138,7 @@ function changeLetters(event, word, length) {
 window.addEventListener('keydown', deleteChar);
 
 function deleteChar(event) {
-    const word = words[FIRST_WORD_INDEX];
+    const word = words[firstWordIndex];
     if (event.code === BACKSPACE && charIndex > 0) {
         primaryWord.innerHTML = previousWord[prwIndex - 1] + word.slice(charIndex - 1);
         finalString = previousWord[prwIndex - 1];
@@ -160,7 +163,7 @@ function updateScore(validWord, wordLength) {
 }
 
 function nextWord(event) {
-    const wordLength = words[FIRST_WORD_INDEX].length;
+    const wordLength = words[firstWordIndex].length;
     if (event.code === SPACE) {
         updateScore(validWord, wordLength);
         validWord = true;
