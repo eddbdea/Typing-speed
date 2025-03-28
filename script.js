@@ -24,7 +24,6 @@ const TWO_HUNDRED = 200;
 let stopTimer = 0;
 let score = 0;
 let prwIndex = 0;
-let index = 0;
 let charIndex = 0;
 let oneMinuteTimer = 60;
 let finalString = "";
