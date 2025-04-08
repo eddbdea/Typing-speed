@@ -6,3 +6,4 @@ Game interactions:
 2. writing a wrong letter will turn that character into color red;
 3. you have the possibility to use "backspace" to delete characters;
 4. you have the possibility to press "space" to jump to the next word;
+5. words are generated randomly from an array of words;
