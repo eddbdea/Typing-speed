@@ -64,14 +64,14 @@
 
 .display-type {
     display: inline;
-    opacity: 0.3;
+    opacity: 0.6;
     font-size: 40px;
     margin-right: 5px;
-    color: #5F8B4C;
+    color: #121611;
 }
 
 .correct {
-    color: green;
+    color: rgb(0, 96, 0);
 }
 
 .wrong {
